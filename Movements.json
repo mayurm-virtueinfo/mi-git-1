@@ -178,32 +178,6 @@
         "Required": [],
         "Property": [
             {
-                "name": "Mayur",
-                "description": "",
-                "isID": false,
-                "status": "",
-                "cardinality": "",
-                "tags": [],
-                "defaultValue": "",
-                "DataType": {
-                    "type": "Text",
-                    "name": "Mayur"
-                }
-            },
-            {
-                "name": "Attribute1",
-                "description": "",
-                "isID": false,
-                "status": "",
-                "cardinality": "",
-                "tags": [],
-                "defaultValue": "",
-                "DataType": {
-                    "type": "Text",
-                    "name": "Attribute1"
-                }
-            },
-            {
                 "name": "Attribute2",
                 "description": "",
                 "isID": false,
