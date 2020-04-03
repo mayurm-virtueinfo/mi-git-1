@@ -1,0 +1,4090 @@
+{
+    "type": "package",
+    "name": "Movements",
+    "MovementPartyRoleCode": {
+        "name": "MovementPartyRoleCode",
+        "type": "Enum",
+        "isAbstract": false,
+        "description": "",
+        "Property": [],
+        "Enum": [
+            {
+                "name": "Carrier",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "NVOCC",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "ConsortiumCarrier",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "CarrierAgent",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Inspection",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "UnloadingInspection",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "LoadingInspection",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "TerminalOperator",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Stevedore",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "ConsolidatorAgent",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Notified",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "SailingAdviceNotified",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "DocumentaryInstructions",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "CommodityConsolidator",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "CommodityConsolidatorAgent",
+                "description": "",
+                "tags": []
+            }
+        ]
+    },
+    "TransportMeansPartyRole_Code": {
+        "name": "TransportMeansPartyRole_Code",
+        "type": "Enum",
+        "isAbstract": false,
+        "description": "",
+        "Property": [],
+        "Enum": [
+            {
+                "name": "ServiceProvider",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Owner",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "OwnerAgent",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Operator",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "ISSCIssuingAuthority",
+                "description": "",
+                "tags": []
+            }
+        ]
+    },
+    "TransportEventType_Code": {
+        "name": "TransportEventType_Code",
+        "type": "Enum",
+        "isAbstract": false,
+        "description": "",
+        "Property": [],
+        "Enum": [
+            {
+                "name": "Call",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Arrival",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Departure",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Loading",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "UnLoading",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "BorderCrossing",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "TransShipment",
+                "description": "",
+                "tags": []
+            },
+            {
+                "name": "Stop",
+                "description": "",
+                "tags": []
+            }
+        ]
+    },
+    "Journey": {
+        "type": "Entity",
+        "name": "Journey",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "Mayur",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Mayur"
+                }
+            },
+            {
+                "name": "Attribute1",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Attribute1"
+                }
+            },
+            {
+                "name": "Attribute2",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Attribute2"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "generalization",
+                "source": {
+                    "name": "Journey",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "TransportMovement",
+                    "type": "Entity"
+                }
+            }
+        ]
+    },
+    "Vessel": {
+        "type": "Entity",
+        "name": "Vessel",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "DraughtLevel",
+                "description": "The measure of the draught level of this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003827",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "DraughtLevel"
+                }
+            },
+            {
+                "name": "ForwardDraughtLevel",
+                "description": "The draught level measured at the fore end of this transport means.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01010105",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "ForwardDraughtLevel"
+                }
+            },
+            {
+                "name": "AftDraughtLevel",
+                "description": "The draught level measured at the aft end of this transport means.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01010106",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "AftDraughtLevel"
+                }
+            },
+            {
+                "name": "Helipad",
+                "description": "The indication of whether or not there is a helipad on this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000012\nUN01010108",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Indicator",
+                    "name": "Helipad"
+                }
+            },
+            {
+                "name": "ManoeuvringSpeed",
+                "description": "The manoeuvring speed measured for this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01010104",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "ManoeuvringSpeed"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "generalization",
+                "source": {
+                    "name": "Vessel",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "TransportMeans",
+                    "type": "Entity"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "interfaceRealization",
+                "source": {
+                    "name": "Vessel",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "Vessels",
+                    "type": "Event"
+                }
+            }
+        ]
+    },
+    "Voyage": {
+        "type": "Entity",
+        "name": "Voyage",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "PilotageExemption",
+                "description": "The identifier of a pilotage exemption for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01010119",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "PilotageExemption"
+                }
+            },
+            {
+                "name": "SailingAdviceNotificationInformation",
+                "description": "Sailing advice notification information, expressed as text, for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01003853",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "SailingAdviceNotificationInformation"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "interfaceRealization",
+                "source": {
+                    "name": "Voyage",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "Voyages",
+                    "type": "Event"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "generalization",
+                "source": {
+                    "name": "Voyage",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "TransportMovement",
+                    "type": "Entity"
+                }
+            },
+            {
+                "name": "VoyageLifecycle",
+                "description": "The state lifecycle of a trasnport movement"
+            }
+        ]
+    },
+    "Vehicle": {
+        "type": "Entity",
+        "name": "Vehicle",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "DriverAccompanied",
+                "description": "The indication of whether or not this logistics means of transport is accompanied by a driver.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000012\nUN01010102",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Indicator",
+                    "name": "DriverAccompanied"
+                }
+            },
+            {
+                "name": "AxleLoad",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "AxleLoad"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "generalization",
+                "source": {
+                    "name": "Vehicle",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "TransportMeans",
+                    "type": "Entity"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "interfaceRealization",
+                "source": {
+                    "name": "Vehicle",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "Vehicles",
+                    "type": "Event"
+                }
+            }
+        ]
+    },
+    "TransportEvent": {
+        "type": "Entity",
+        "name": "TransportEvent",
+        "isAbstract": false,
+        "description": "A significant occurrence or happening during transport.",
+        "version": "",
+        "status": "",
+        "Required": [
+            "OccurrenceTime"
+        ],
+        "Property": [
+            {
+                "name": "OccurrenceTime",
+                "description": "The actual date, time, date time, or other date time value of the occurrence of this transport event.",
+                "isID": false,
+                "status": "",
+                "cardinality": "1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000008\nUN01004796",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "DateTime",
+                    "name": "OccurrenceTime"
+                }
+            },
+            {
+                "name": "ReportedTime",
+                "description": "The date, time, date time or other date time value of the actual arrival related to this transport event.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000008\nUN01010148",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "DateTime",
+                    "name": "ReportedTime"
+                }
+            },
+            {
+                "name": "Description",
+                "description": "The textual description of this transport event.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01004794",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Description"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "CertifyingTradeParty",
+                "description": "A certifying party for this transport event.",
+                "type": "aggregation",
+                "source": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportParty",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Party"
+                }
+            },
+            {
+                "name": "RelatedLocation",
+                "description": "The location of a conveyance facility related to this transport event.",
+                "type": "composition",
+                "source": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "LogisticsLocation",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "EventLocation",
+                "description": "The logistics location where this transport event occurs.",
+                "type": "composition",
+                "source": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "LogisticsLocation",
+                    "type": "Entity",
+                    "cardinality": "0..1",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "RelatedTransportRoute",
+                "description": "The route related to this transport event.",
+                "type": "aggregation",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportRoute",
+                    "type": "Entity",
+                    "cardinality": "0..1",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "interfaceRealization",
+                "source": {
+                    "name": "TransportEvent",
+                    "type": "Entity"
+                },
+                "target": {
+                    "name": "TransportEvents",
+                    "type": "Event"
+                }
+            }
+        ]
+    },
+    "TransportMovement": {
+        "type": "Entity",
+        "name": "TransportMovement",
+        "isAbstract": false,
+        "description": "The conveyance (physical carriage) of goods or other objects used for logistics transport purposes.",
+        "version": "",
+        "status": "",
+        "Required": [
+            "Identification"
+        ],
+        "Property": [
+            {
+                "name": "Identification",
+                "description": "The unique identifier for this logistics transport movement, such as a voyage number, flight number, or trip number.",
+                "isID": true,
+                "status": "",
+                "cardinality": "1..*",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01003841",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "Identification"
+                }
+            },
+            {
+                "name": "TerminalOperatorAssignedIdentification",
+                "description": "A unique identifier for this logistics transport movement as assigned by a terminal operator.",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..*",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01003844",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "TerminalOperatorAssignedIdentification"
+                }
+            },
+            {
+                "name": "Stay",
+                "description": "The unique identifier of a stay in a port, airport or other place of service for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01003845",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "Stay"
+                }
+            },
+            {
+                "name": "Status",
+                "description": "The code specifying a status for the logistics transport movement, such as estimated or final.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01011524",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Status"
+                }
+            },
+            {
+                "name": "Mode",
+                "description": "The code specifying the mode, such as by air, sea, rail, road or inland waterway, for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01003839",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Mode"
+                }
+            },
+            {
+                "name": "Stage",
+                "description": "The code specifying the stage of this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01003838",
+                        "kind": "hidden"
+                    },
+                    {
+                        "name": "OpenAPI",
+                        "value": "query",
+                        "kind": "string"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Stage"
+                }
+            },
+            {
+                "name": "CargoDescription",
+                "description": "The textual description of the cargo for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01010120",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "CargoDescription"
+                }
+            },
+            {
+                "name": "Closing",
+                "description": "The date, time, date time, or other date time value by which cargo should be loaded onto the means of transport for the departure of this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000008\nUN01003846",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "DateTime",
+                    "name": "Closing"
+                }
+            },
+            {
+                "name": "Information",
+                "description": "Information, expressed as text, for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01006193",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Information"
+                }
+            },
+            {
+                "name": "DangerousGoods",
+                "description": "The indication of whether or not dangerous goods are carried for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000012\nUN01010121",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Indicator",
+                    "name": "DangerousGoods"
+                }
+            },
+            {
+                "name": "ManifestOnboard",
+                "description": "The indication of whether or not the manifest for this logistics transport movement is onboard.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000012\nUN01010122",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Indicator",
+                    "name": "ManifestOnboard"
+                }
+            },
+            {
+                "name": "TransitDirection",
+                "description": "The code specifying the transit direction of this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01003848",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "TransitDirection"
+                }
+            },
+            {
+                "name": "TransportEquipment",
+                "description": "The number of pieces of transport equipment for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000018\nUN01003851",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Quantity",
+                    "name": "TransportEquipment"
+                }
+            },
+            {
+                "name": "Package",
+                "description": "The number of packages in this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000018\nUN01006137",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Quantity",
+                    "name": "Package"
+                }
+            },
+            {
+                "name": "Consignment",
+                "description": "The number of consignments in this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000018\nUN01006136",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Quantity",
+                    "name": "Consignment"
+                }
+            },
+            {
+                "name": "Crew",
+                "description": "The number of crew members for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000018\nUN01003850",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Quantity",
+                    "name": "Crew"
+                }
+            },
+            {
+                "name": "Crewnationality",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..*",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Crewnationality"
+                }
+            },
+            {
+                "name": "Passenger",
+                "description": "The number of passengers for this logistics transport movement.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000018\nUN01003849",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Quantity",
+                    "name": "Passenger"
+                }
+            },
+            {
+                "name": "PassengerNationality",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..*",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "PassengerNationality"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "ActualEvent",
+                "description": "A transport event specified for this logistics transport movement.",
+                "type": "composition",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "UsedTransportMeans",
+                "description": "The means of transport used for this logistics transport movement.",
+                "type": "aggregation",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportMeans",
+                    "type": "Entity",
+                    "cardinality": "0..1",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "ScheduledEvent",
+                "description": "",
+                "type": "composition",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            },
+            {
+                "name": "EstimatedEvent",
+                "description": "",
+                "type": "composition",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            }
+        ]
+    },
+    "LogisticsLocation": {
+        "type": "Entity",
+        "name": "LogisticsLocation",
+        "isAbstract": false,
+        "description": "A logistics related physical location or place.",
+        "version": "",
+        "status": "",
+        "Required": [
+            "Unlocode"
+        ],
+        "Property": [
+            {
+                "name": "Unlocode",
+                "description": "",
+                "isID": true,
+                "status": "",
+                "cardinality": "1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "code",
+                    "name": "Unlocode"
+                }
+            },
+            {
+                "name": "OtherIdentification",
+                "description": "A unique identifier for this logistics related location, such as a United Nations Location Code (UNLOCODE) or GS1 Global Location Number (GLN).",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..*",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01003680",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "OtherIdentification"
+                }
+            },
+            {
+                "name": "Name",
+                "description": "A name, expressed as text, of this logistics related location.",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01003681",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Name"
+                }
+            },
+            {
+                "name": "Description",
+                "description": "A textual description of this logistics related location.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01003683",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Description"
+                }
+            },
+            {
+                "name": "Country",
+                "description": "The unique identifier of a country for this logistics location.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01004897",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Country"
+                }
+            },
+            {
+                "name": "Type",
+                "description": "A code specifying the type of this logistics related location.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01003682",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Type"
+                }
+            },
+            {
+                "name": "Latitude",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Numeric",
+                    "name": "Latitude"
+                }
+            },
+            {
+                "name": "Longditude",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Numeric",
+                    "name": "Longditude"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "PostalTradeAddress",
+                "description": "The postal trade address information for this logistics related location.",
+                "type": "interface",
+                "source": {
+                    "name": "LogisticsLocation",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TradeAddress",
+                    "type": "Entity",
+                    "cardinality": "0..1",
+                    "navigable": true,
+                    "package": "Party"
+                }
+            }
+        ]
+    },
+    "TransportMeans": {
+        "type": "Entity",
+        "name": "TransportMeans",
+        "isAbstract": false,
+        "description": "The devices used to convey goods or other objects from place to place during logistics cargo movements.",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "Identification",
+                "description": "An identifier of this logistics means of transport, such as the International Maritime Organization number of a vessel.",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..*",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01003822",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "Identification"
+                }
+            },
+            {
+                "name": "Name",
+                "description": "The name, expressed as text, of this logistics means of transport.",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01003823",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Name"
+                }
+            },
+            {
+                "name": "CargoGrossWeight",
+                "description": "The measure of the total gross weight (mass) of all cargo loaded onto this logistics means of transport, including packaging but excluding any associated transport equipment.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003828",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "CargoGrossWeight"
+                }
+            },
+            {
+                "name": "Conference",
+                "description": "The code specifying the conference for this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01010103",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Conference"
+                }
+            },
+            {
+                "name": "GrossWeight",
+                "description": "The measure of the gross weight (mass) of this logistics means of transport including cargo, such as the measure of the overall size of a vessel determined in accordance with the provisions of the International Convention on Tonnage Measurement of Ships, 1969.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003824",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "GrossWeight"
+                }
+            },
+            {
+                "name": "ISPSSecurityLevel",
+                "description": "The code specifying the International Ship and Port facility Security (ISPS) level assigned to this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01010109",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "ISPSSecurityLevel"
+                }
+            },
+            {
+                "name": "Length",
+                "description": "The measure of the length of this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003826",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "Length"
+                }
+            },
+            {
+                "name": "LoadedCargo",
+                "description": "The measure of the cargo loaded onto this logistics means of transport, such as the number of barrels of oil or other quantity of breakbulk cargo.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003830",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "LoadedCargo"
+                }
+            },
+            {
+                "name": "NetWeight",
+                "description": "The measure of the net weight (mass) of this logistics means of transport, such as the net tonnage of a vessel determined in accordance with the provisions of the International Convention on Tonnage Measurement of Ships, 1969.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003825",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "NetWeight"
+                }
+            },
+            {
+                "name": "RequiredLaneLength",
+                "description": "The measure of the external length required in a lane for this logistics transport means.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000013\nUN01003829",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Measure",
+                    "name": "RequiredLaneLength"
+                }
+            },
+            {
+                "name": "Sequence",
+                "description": "The sequence number differentiating this logistics transport means from others.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000014\nUN01010101",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Numeric",
+                    "name": "Sequence"
+                }
+            },
+            {
+                "name": "Type",
+                "description": "The code specifying the type of logistics means of transport (Reference UNECE Recommendation 28).",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01003820",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Type"
+                }
+            },
+            {
+                "name": "TypeText",
+                "description": "The type, expressed as text, of this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01003821",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "TypeText"
+                }
+            },
+            {
+                "name": "WasteReportingExemption",
+                "description": "The indication of whether or not there is a waste reporting exemption for this logistics means of transport.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000012\nUN01010107",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Indicator",
+                    "name": "WasteReportingExemption"
+                }
+            },
+            {
+                "name": "RegistrationCountry",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "RegistrationCountry"
+                }
+            },
+            {
+                "name": "OperatorNationality",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "OperatorNationality"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "RegistrationTransportEvent",
+                "description": "A registration event of this logistics transport means.",
+                "type": "interface",
+                "source": {
+                    "name": "TransportMeans",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportEvent",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            }
+        ]
+    },
+    "TransportRoute": {
+        "type": "Entity",
+        "name": "TransportRoute",
+        "isAbstract": false,
+        "description": "A way or course taken from one location to another for the purpose of transporting cargo and or passengers.",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "Identification",
+                "description": "The unique identifier of this transport route.",
+                "isID": true,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000011\nUN01004823",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Identifier",
+                    "name": "Identification"
+                }
+            },
+            {
+                "name": "DeparturePoint",
+                "description": "A departure point, expressed as text, for this transport route.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01004825",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "DeparturePoint"
+                }
+            },
+            {
+                "name": "Description",
+                "description": "The textual description of this transport route.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01004824",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "Description"
+                }
+            },
+            {
+                "name": "FrequencyType",
+                "description": "The code specifying the type of frequency for this transport route, such as weekly, bi-monthly or daily.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01004828",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "FrequencyType"
+                }
+            },
+            {
+                "name": "Map",
+                "description": "Binary object data that is the map of this transport route.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000002\nUN01004826",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "BinaryObject",
+                    "name": "Map"
+                }
+            },
+            {
+                "name": "Status",
+                "description": "The code specifying a status for a transport route, such as planned or actual.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT000007\nUN01011530",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Status"
+                }
+            },
+            {
+                "name": "TransportMeans",
+                "description": "A means of transport, expressed as text, for this transport route.",
+                "isID": false,
+                "status": "",
+                "cardinality": "0..1",
+                "tags": [
+                    {
+                        "name": "UID",
+                        "value": "UDT0000019\nUN01004827",
+                        "kind": "hidden"
+                    }
+                ],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Text",
+                    "name": "TransportMeans"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "ItineraryStopLocation",
+                "description": "An itinerary stop event for this transport route, such as a port call in a vessel schedule.",
+                "type": "composition",
+                "source": {
+                    "name": "TransportRoute",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "LogisticsLocation",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            }
+        ]
+    },
+    "TransportMovementParty": {
+        "type": "Entity",
+        "name": "TransportMovementParty",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [
+            "Role"
+        ],
+        "Property": [
+            {
+                "name": "Role",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "1",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "MovementPartyRole_Code",
+                    "name": "Role"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "MovementParty",
+                "description": "",
+                "type": "aggregation",
+                "source": {
+                    "name": "TransportMovement",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportParty",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Party"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "associationClassLink",
+                "association": {
+                    "name": "MovementParty",
+                    "description": "",
+                    "type": "aggregation",
+                    "source": {
+                        "name": "TransportMovement",
+                        "type": "Entity",
+                        "cardinality": "",
+                        "navigable": true,
+                        "package": "Movements"
+                    },
+                    "target": {
+                        "name": "TransportParty",
+                        "type": "Entity",
+                        "cardinality": "0..*",
+                        "navigable": true,
+                        "package": "Party"
+                    }
+                },
+                "class": {
+                    "name": "TransportMovementParty",
+                    "type": "Entity"
+                }
+            }
+        ]
+    },
+    "TransportMeansParty": {
+        "type": "Entity",
+        "name": "TransportMeansParty",
+        "isAbstract": false,
+        "description": "",
+        "version": "",
+        "status": "",
+        "Required": [],
+        "Property": [
+            {
+                "name": "Role",
+                "description": "",
+                "isID": false,
+                "status": "",
+                "cardinality": "",
+                "tags": [],
+                "defaultValue": "",
+                "DataType": {
+                    "type": "TransportMeansPartyRole_Code",
+                    "name": "Role"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "MeansParty",
+                "description": "",
+                "type": "aggregation",
+                "source": {
+                    "name": "TransportMeans",
+                    "type": "Entity",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "TransportParty",
+                    "type": "Entity",
+                    "cardinality": "0..*",
+                    "navigable": true,
+                    "package": "Party"
+                }
+            },
+            {
+                "name": "",
+                "description": "",
+                "type": "associationClassLink",
+                "association": {
+                    "name": "MeansParty",
+                    "description": "",
+                    "type": "aggregation",
+                    "source": {
+                        "name": "TransportMeans",
+                        "type": "Entity",
+                        "cardinality": "",
+                        "navigable": true,
+                        "package": "Movements"
+                    },
+                    "target": {
+                        "name": "TransportParty",
+                        "type": "Entity",
+                        "cardinality": "0..*",
+                        "navigable": true,
+                        "package": "Party"
+                    }
+                },
+                "class": {
+                    "name": "TransportMeansParty",
+                    "type": "Entity"
+                }
+            }
+        ]
+    },
+    "Vessels": {
+        "type": "Event",
+        "name": "Vessels",
+        "description": "",
+        "from": {},
+        "to": {},
+        "Required": [
+            "id",
+            "Status"
+        ],
+        "Property": [
+            {
+                "name": "id",
+                "description": "",
+                "isID": false,
+                "cardinality": "1",
+                "defaultValue": "",
+                "DataType": {
+                    "type": "string",
+                    "name": "id"
+                }
+            },
+            {
+                "name": "Status",
+                "description": "",
+                "isID": false,
+                "cardinality": "1",
+                "defaultValue": "",
+                "DataType": {
+                    "type": "Code",
+                    "name": "Status"
+                }
+            }
+        ],
+        "Relationship": [],
+        "Operation": [
+            {
+                "name": "GET",
+                "Parameter": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "",
+                            "name": "id"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "Voyages": {
+        "type": "Event",
+        "name": "Voyages",
+        "description": "",
+        "from": {},
+        "to": {},
+        "Required": [
+            "id"
+        ],
+        "Property": [
+            {
+                "name": "id",
+                "description": "",
+                "isID": false,
+                "cardinality": "1",
+                "defaultValue": "",
+                "DataType": {
+                    "type": "string",
+                    "name": "id"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "interface",
+                "source": {
+                    "name": "Voyages",
+                    "type": "Event",
+                    "cardinality": "",
+                    "navigable": false,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "Vessels",
+                    "type": "Event",
+                    "cardinality": "0..1",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            }
+        ],
+        "Operation": [
+            {
+                "name": "POST",
+                "Parameter": [
+                    {
+                        "name": "Voyage",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "Voyage"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "GET",
+                "Parameter": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Event",
+                            "name": "Voyages"
+                        }
+                    },
+                    {
+                        "name": "unlocode",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "LogisticsLocation"
+                        }
+                    },
+                    {
+                        "name": "OccurrenceTime",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "TransportEvent"
+                        }
+                    },
+                    {
+                        "name": "Name",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "Vessel"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "PATCH",
+                "Parameter": [
+                    {
+                        "name": "Voyage",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "Voyage"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "Vehicles": {
+        "type": "Event",
+        "name": "Vehicles",
+        "description": "",
+        "from": {},
+        "to": {},
+        "Required": [],
+        "Property": [
+            {
+                "name": "id",
+                "description": "",
+                "isID": false,
+                "cardinality": "",
+                "defaultValue": "",
+                "DataType": {
+                    "type": "string",
+                    "name": "id"
+                }
+            }
+        ],
+        "Relationship": [],
+        "Operation": [
+            {
+                "name": "GET",
+                "Parameter": []
+            }
+        ]
+    },
+    "TransportEvents": {
+        "type": "Event",
+        "name": "TransportEvents",
+        "description": "",
+        "from": {},
+        "to": {},
+        "Required": [],
+        "Property": [
+            {
+                "name": "id",
+                "description": "",
+                "isID": false,
+                "cardinality": "",
+                "defaultValue": "",
+                "DataType": {
+                    "type": "string",
+                    "name": "id"
+                }
+            }
+        ],
+        "Relationship": [
+            {
+                "name": "",
+                "description": "",
+                "type": "composition",
+                "source": {
+                    "name": "TransportEvents",
+                    "type": "Event",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                },
+                "target": {
+                    "name": "Voyages",
+                    "type": "Event",
+                    "cardinality": "",
+                    "navigable": true,
+                    "package": "Movements"
+                }
+            }
+        ],
+        "Operation": [
+            {
+                "name": "POST",
+                "Parameter": [
+                    {
+                        "name": "TransportEvent",
+                        "description": "",
+                        "status": "",
+                        "DataType": {
+                            "type": "",
+                            "name": "TransportEvent"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "dependent": [
+        {
+            "type": "package",
+            "name": "Movements",
+            "isAbstract": true,
+            "MovementPartyRoleCode": {
+                "name": "MovementPartyRoleCode",
+                "type": "Enum",
+                "isAbstract": false,
+                "description": "",
+                "Property": [],
+                "Enum": [
+                    {
+                        "name": "Carrier",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "NVOCC",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "ConsortiumCarrier",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "CarrierAgent",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Inspection",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "UnloadingInspection",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "LoadingInspection",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "TerminalOperator",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Stevedore",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "ConsolidatorAgent",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Notified",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "SailingAdviceNotified",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "DocumentaryInstructions",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "CommodityConsolidator",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "CommodityConsolidatorAgent",
+                        "description": "",
+                        "tags": []
+                    }
+                ]
+            },
+            "TransportMeansPartyRole_Code": {
+                "name": "TransportMeansPartyRole_Code",
+                "type": "Enum",
+                "isAbstract": false,
+                "description": "",
+                "Property": [],
+                "Enum": [
+                    {
+                        "name": "ServiceProvider",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Owner",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "OwnerAgent",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Operator",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "ISSCIssuingAuthority",
+                        "description": "",
+                        "tags": []
+                    }
+                ]
+            },
+            "TransportEventType_Code": {
+                "name": "TransportEventType_Code",
+                "type": "Enum",
+                "isAbstract": false,
+                "description": "",
+                "Property": [],
+                "Enum": [
+                    {
+                        "name": "Call",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Arrival",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Departure",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Loading",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "UnLoading",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "BorderCrossing",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "TransShipment",
+                        "description": "",
+                        "tags": []
+                    },
+                    {
+                        "name": "Stop",
+                        "description": "",
+                        "tags": []
+                    }
+                ]
+            },
+            "TransportEvent": {
+                "type": "Entity",
+                "name": "TransportEvent",
+                "isAbstract": false,
+                "description": "A significant occurrence or happening during transport.",
+                "version": "",
+                "status": "",
+                "Required": [
+                    "OccurrenceTime"
+                ],
+                "Property": [
+                    {
+                        "name": "OccurrenceTime",
+                        "description": "The actual date, time, date time, or other date time value of the occurrence of this transport event.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000008\nUN01004796",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "DateTime",
+                            "name": "OccurrenceTime"
+                        }
+                    },
+                    {
+                        "name": "ReportedTime",
+                        "description": "The date, time, date time or other date time value of the actual arrival related to this transport event.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000008\nUN01010148",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "DateTime",
+                            "name": "ReportedTime"
+                        }
+                    },
+                    {
+                        "name": "Description",
+                        "description": "The textual description of this transport event.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004794",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Description"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "CertifyingTradeParty",
+                        "description": "A certifying party for this transport event.",
+                        "type": "aggregation",
+                        "source": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportParty",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Party"
+                        }
+                    },
+                    {
+                        "name": "RelatedLocation",
+                        "description": "The location of a conveyance facility related to this transport event.",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "LogisticsLocation",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "EventLocation",
+                        "description": "The logistics location where this transport event occurs.",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "LogisticsLocation",
+                            "type": "Entity",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "RelatedTransportRoute",
+                        "description": "The route related to this transport event.",
+                        "type": "aggregation",
+                        "source": {
+                            "name": "TransportMovement",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportRoute",
+                            "type": "Entity",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "",
+                        "description": "",
+                        "type": "interfaceRealization",
+                        "source": {
+                            "name": "TransportEvent",
+                            "type": "Entity"
+                        },
+                        "target": {
+                            "name": "TransportEvents",
+                            "type": "Event"
+                        }
+                    }
+                ]
+            },
+            "TransportMovement": {
+                "type": "Entity",
+                "name": "TransportMovement",
+                "isAbstract": false,
+                "description": "The conveyance (physical carriage) of goods or other objects used for logistics transport purposes.",
+                "version": "",
+                "status": "",
+                "Required": [
+                    "Identification"
+                ],
+                "Property": [
+                    {
+                        "name": "Identification",
+                        "description": "The unique identifier for this logistics transport movement, such as a voyage number, flight number, or trip number.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "1..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01003841",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Identification"
+                        }
+                    },
+                    {
+                        "name": "TerminalOperatorAssignedIdentification",
+                        "description": "A unique identifier for this logistics transport movement as assigned by a terminal operator.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01003844",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "TerminalOperatorAssignedIdentification"
+                        }
+                    },
+                    {
+                        "name": "Stay",
+                        "description": "The unique identifier of a stay in a port, airport or other place of service for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01003845",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Stay"
+                        }
+                    },
+                    {
+                        "name": "Status",
+                        "description": "The code specifying a status for the logistics transport movement, such as estimated or final.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01011524",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Status"
+                        }
+                    },
+                    {
+                        "name": "Mode",
+                        "description": "The code specifying the mode, such as by air, sea, rail, road or inland waterway, for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01003839",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Mode"
+                        }
+                    },
+                    {
+                        "name": "Stage",
+                        "description": "The code specifying the stage of this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01003838",
+                                "kind": "hidden"
+                            },
+                            {
+                                "name": "OpenAPI",
+                                "value": "query",
+                                "kind": "string"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Stage"
+                        }
+                    },
+                    {
+                        "name": "CargoDescription",
+                        "description": "The textual description of the cargo for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01010120",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "CargoDescription"
+                        }
+                    },
+                    {
+                        "name": "Closing",
+                        "description": "The date, time, date time, or other date time value by which cargo should be loaded onto the means of transport for the departure of this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000008\nUN01003846",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "DateTime",
+                            "name": "Closing"
+                        }
+                    },
+                    {
+                        "name": "Information",
+                        "description": "Information, expressed as text, for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01006193",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Information"
+                        }
+                    },
+                    {
+                        "name": "DangerousGoods",
+                        "description": "The indication of whether or not dangerous goods are carried for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000012\nUN01010121",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Indicator",
+                            "name": "DangerousGoods"
+                        }
+                    },
+                    {
+                        "name": "ManifestOnboard",
+                        "description": "The indication of whether or not the manifest for this logistics transport movement is onboard.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000012\nUN01010122",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Indicator",
+                            "name": "ManifestOnboard"
+                        }
+                    },
+                    {
+                        "name": "TransitDirection",
+                        "description": "The code specifying the transit direction of this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01003848",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "TransitDirection"
+                        }
+                    },
+                    {
+                        "name": "TransportEquipment",
+                        "description": "The number of pieces of transport equipment for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000018\nUN01003851",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Quantity",
+                            "name": "TransportEquipment"
+                        }
+                    },
+                    {
+                        "name": "Package",
+                        "description": "The number of packages in this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000018\nUN01006137",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Quantity",
+                            "name": "Package"
+                        }
+                    },
+                    {
+                        "name": "Consignment",
+                        "description": "The number of consignments in this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000018\nUN01006136",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Quantity",
+                            "name": "Consignment"
+                        }
+                    },
+                    {
+                        "name": "Crew",
+                        "description": "The number of crew members for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000018\nUN01003850",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Quantity",
+                            "name": "Crew"
+                        }
+                    },
+                    {
+                        "name": "Crewnationality",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Crewnationality"
+                        }
+                    },
+                    {
+                        "name": "Passenger",
+                        "description": "The number of passengers for this logistics transport movement.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000018\nUN01003849",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Quantity",
+                            "name": "Passenger"
+                        }
+                    },
+                    {
+                        "name": "PassengerNationality",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "PassengerNationality"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "ActualEvent",
+                        "description": "A transport event specified for this logistics transport movement.",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportMovement",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "UsedTransportMeans",
+                        "description": "The means of transport used for this logistics transport movement.",
+                        "type": "aggregation",
+                        "source": {
+                            "name": "TransportMovement",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportMeans",
+                            "type": "Entity",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "ScheduledEvent",
+                        "description": "",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportMovement",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    },
+                    {
+                        "name": "EstimatedEvent",
+                        "description": "",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportMovement",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    }
+                ]
+            },
+            "LogisticsLocation": {
+                "type": "Entity",
+                "name": "LogisticsLocation",
+                "isAbstract": false,
+                "description": "A logistics related physical location or place.",
+                "version": "",
+                "status": "",
+                "Required": [
+                    "Unlocode"
+                ],
+                "Property": [
+                    {
+                        "name": "Unlocode",
+                        "description": "",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "1",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "code",
+                            "name": "Unlocode"
+                        }
+                    },
+                    {
+                        "name": "OtherIdentification",
+                        "description": "A unique identifier for this logistics related location, such as a United Nations Location Code (UNLOCODE) or GS1 Global Location Number (GLN).",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01003680",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "OtherIdentification"
+                        }
+                    },
+                    {
+                        "name": "Name",
+                        "description": "A name, expressed as text, of this logistics related location.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01003681",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Name"
+                        }
+                    },
+                    {
+                        "name": "Description",
+                        "description": "A textual description of this logistics related location.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01003683",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Description"
+                        }
+                    },
+                    {
+                        "name": "Country",
+                        "description": "The unique identifier of a country for this logistics location.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01004897",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Country"
+                        }
+                    },
+                    {
+                        "name": "Type",
+                        "description": "A code specifying the type of this logistics related location.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01003682",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Type"
+                        }
+                    },
+                    {
+                        "name": "Latitude",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Numeric",
+                            "name": "Latitude"
+                        }
+                    },
+                    {
+                        "name": "Longditude",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Numeric",
+                            "name": "Longditude"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "PostalTradeAddress",
+                        "description": "The postal trade address information for this logistics related location.",
+                        "type": "interface",
+                        "source": {
+                            "name": "LogisticsLocation",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TradeAddress",
+                            "type": "Entity",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Party"
+                        }
+                    }
+                ]
+            },
+            "TransportMeans": {
+                "type": "Entity",
+                "name": "TransportMeans",
+                "isAbstract": false,
+                "description": "The devices used to convey goods or other objects from place to place during logistics cargo movements.",
+                "version": "",
+                "status": "",
+                "Required": [],
+                "Property": [
+                    {
+                        "name": "Identification",
+                        "description": "An identifier of this logistics means of transport, such as the International Maritime Organization number of a vessel.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01003822",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Identification"
+                        }
+                    },
+                    {
+                        "name": "Name",
+                        "description": "The name, expressed as text, of this logistics means of transport.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01003823",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Name"
+                        }
+                    },
+                    {
+                        "name": "CargoGrossWeight",
+                        "description": "The measure of the total gross weight (mass) of all cargo loaded onto this logistics means of transport, including packaging but excluding any associated transport equipment.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003828",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "CargoGrossWeight"
+                        }
+                    },
+                    {
+                        "name": "Conference",
+                        "description": "The code specifying the conference for this logistics means of transport.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01010103",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Conference"
+                        }
+                    },
+                    {
+                        "name": "GrossWeight",
+                        "description": "The measure of the gross weight (mass) of this logistics means of transport including cargo, such as the measure of the overall size of a vessel determined in accordance with the provisions of the International Convention on Tonnage Measurement of Ships, 1969.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003824",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "GrossWeight"
+                        }
+                    },
+                    {
+                        "name": "ISPSSecurityLevel",
+                        "description": "The code specifying the International Ship and Port facility Security (ISPS) level assigned to this logistics means of transport.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01010109",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "ISPSSecurityLevel"
+                        }
+                    },
+                    {
+                        "name": "Length",
+                        "description": "The measure of the length of this logistics means of transport.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003826",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "Length"
+                        }
+                    },
+                    {
+                        "name": "LoadedCargo",
+                        "description": "The measure of the cargo loaded onto this logistics means of transport, such as the number of barrels of oil or other quantity of breakbulk cargo.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003830",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "LoadedCargo"
+                        }
+                    },
+                    {
+                        "name": "NetWeight",
+                        "description": "The measure of the net weight (mass) of this logistics means of transport, such as the net tonnage of a vessel determined in accordance with the provisions of the International Convention on Tonnage Measurement of Ships, 1969.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003825",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "NetWeight"
+                        }
+                    },
+                    {
+                        "name": "RequiredLaneLength",
+                        "description": "The measure of the external length required in a lane for this logistics transport means.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000013\nUN01003829",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Measure",
+                            "name": "RequiredLaneLength"
+                        }
+                    },
+                    {
+                        "name": "Sequence",
+                        "description": "The sequence number differentiating this logistics transport means from others.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000014\nUN01010101",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Numeric",
+                            "name": "Sequence"
+                        }
+                    },
+                    {
+                        "name": "Type",
+                        "description": "The code specifying the type of logistics means of transport (Reference UNECE Recommendation 28).",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01003820",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Type"
+                        }
+                    },
+                    {
+                        "name": "TypeText",
+                        "description": "The type, expressed as text, of this logistics means of transport.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01003821",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "TypeText"
+                        }
+                    },
+                    {
+                        "name": "WasteReportingExemption",
+                        "description": "The indication of whether or not there is a waste reporting exemption for this logistics means of transport.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000012\nUN01010107",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Indicator",
+                            "name": "WasteReportingExemption"
+                        }
+                    },
+                    {
+                        "name": "RegistrationCountry",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "RegistrationCountry"
+                        }
+                    },
+                    {
+                        "name": "OperatorNationality",
+                        "description": "",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "OperatorNationality"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "RegistrationTransportEvent",
+                        "description": "A registration event of this logistics transport means.",
+                        "type": "interface",
+                        "source": {
+                            "name": "TransportMeans",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "TransportEvent",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    }
+                ]
+            },
+            "TransportRoute": {
+                "type": "Entity",
+                "name": "TransportRoute",
+                "isAbstract": false,
+                "description": "A way or course taken from one location to another for the purpose of transporting cargo and or passengers.",
+                "version": "",
+                "status": "",
+                "Required": [],
+                "Property": [
+                    {
+                        "name": "Identification",
+                        "description": "The unique identifier of this transport route.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01004823",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Identification"
+                        }
+                    },
+                    {
+                        "name": "DeparturePoint",
+                        "description": "A departure point, expressed as text, for this transport route.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004825",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "DeparturePoint"
+                        }
+                    },
+                    {
+                        "name": "Description",
+                        "description": "The textual description of this transport route.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004824",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "Description"
+                        }
+                    },
+                    {
+                        "name": "FrequencyType",
+                        "description": "The code specifying the type of frequency for this transport route, such as weekly, bi-monthly or daily.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01004828",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "FrequencyType"
+                        }
+                    },
+                    {
+                        "name": "Map",
+                        "description": "Binary object data that is the map of this transport route.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000002\nUN01004826",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "BinaryObject",
+                            "name": "Map"
+                        }
+                    },
+                    {
+                        "name": "Status",
+                        "description": "The code specifying a status for a transport route, such as planned or actual.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01011530",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Status"
+                        }
+                    },
+                    {
+                        "name": "TransportMeans",
+                        "description": "A means of transport, expressed as text, for this transport route.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004827",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "TransportMeans"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "ItineraryStopLocation",
+                        "description": "An itinerary stop event for this transport route, such as a port call in a vessel schedule.",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportRoute",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "LogisticsLocation",
+                            "type": "Entity",
+                            "cardinality": "0..*",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    }
+                ]
+            },
+            "Vessels": {
+                "type": "Event",
+                "name": "Vessels",
+                "description": "",
+                "from": {},
+                "to": {},
+                "Required": [
+                    "id",
+                    "Status"
+                ],
+                "Property": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "isID": false,
+                        "cardinality": "1",
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "string",
+                            "name": "id"
+                        }
+                    },
+                    {
+                        "name": "Status",
+                        "description": "",
+                        "isID": false,
+                        "cardinality": "1",
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Status"
+                        }
+                    }
+                ],
+                "Relationship": [],
+                "Operation": [
+                    {
+                        "name": "GET",
+                        "Parameter": [
+                            {
+                                "name": "id",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "",
+                                    "name": "id"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Voyages": {
+                "type": "Event",
+                "name": "Voyages",
+                "description": "",
+                "from": {},
+                "to": {},
+                "Required": [
+                    "id"
+                ],
+                "Property": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "isID": false,
+                        "cardinality": "1",
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "string",
+                            "name": "id"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "type": "interface",
+                        "source": {
+                            "name": "Voyages",
+                            "type": "Event",
+                            "cardinality": "",
+                            "navigable": false,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "Vessels",
+                            "type": "Event",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    }
+                ],
+                "Operation": [
+                    {
+                        "name": "POST",
+                        "Parameter": [
+                            {
+                                "name": "Voyage",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Entity",
+                                    "name": "Voyage"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "GET",
+                        "Parameter": [
+                            {
+                                "name": "id",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Event",
+                                    "name": "Voyages"
+                                }
+                            },
+                            {
+                                "name": "unlocode",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Entity",
+                                    "name": "LogisticsLocation"
+                                }
+                            },
+                            {
+                                "name": "OccurrenceTime",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Entity",
+                                    "name": "TransportEvent"
+                                }
+                            },
+                            {
+                                "name": "Name",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Entity",
+                                    "name": "Vessel"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "PATCH",
+                        "Parameter": [
+                            {
+                                "name": "Voyage",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "Entity",
+                                    "name": "Voyage"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "TransportEvents": {
+                "type": "Event",
+                "name": "TransportEvents",
+                "description": "",
+                "from": {},
+                "to": {},
+                "Required": [],
+                "Property": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "isID": false,
+                        "cardinality": "",
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "string",
+                            "name": "id"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "type": "composition",
+                        "source": {
+                            "name": "TransportEvents",
+                            "type": "Event",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        },
+                        "target": {
+                            "name": "Voyages",
+                            "type": "Event",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Movements"
+                        }
+                    }
+                ],
+                "Operation": [
+                    {
+                        "name": "POST",
+                        "Parameter": [
+                            {
+                                "name": "TransportEvent",
+                                "description": "",
+                                "status": "",
+                                "DataType": {
+                                    "type": "",
+                                    "name": "TransportEvent"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "package",
+            "name": "Party",
+            "isAbstract": true,
+            "TransportParty": {
+                "type": "Entity",
+                "name": "TransportParty",
+                "isAbstract": true,
+                "description": "An individual, a group, or a body having a role in a trade business function.",
+                "version": "",
+                "status": "",
+                "Required": [
+                    "Identification",
+                    "Name"
+                ],
+                "Property": [
+                    {
+                        "name": "Identification",
+                        "description": "A unique identifier of this trade party.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "1..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01004595",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Identification"
+                        }
+                    },
+                    {
+                        "name": "Name",
+                        "description": "The name, expressed as text, for this trade party.",
+                        "isID": true,
+                        "status": "",
+                        "cardinality": "1..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004598",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Entity",
+                            "name": "Text"
+                        }
+                    },
+                    {
+                        "name": "QualityAssurance",
+                        "description": "The indication of whether or not this trade party is quality assured.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000012\nUN01004600",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Indicator",
+                            "name": "QualityAssurance"
+                        }
+                    }
+                ],
+                "Relationship": [
+                    {
+                        "name": "PostalTradeAddress",
+                        "description": "The postal address for this trade party.",
+                        "type": "interface",
+                        "source": {
+                            "name": "TransportParty",
+                            "type": "Entity",
+                            "cardinality": "",
+                            "navigable": true,
+                            "package": "Party"
+                        },
+                        "target": {
+                            "name": "TradeAddress",
+                            "type": "Entity",
+                            "cardinality": "0..1",
+                            "navigable": true,
+                            "package": "Party"
+                        }
+                    }
+                ]
+            },
+            "TradeAddress": {
+                "type": "Entity",
+                "name": "TradeAddress",
+                "isAbstract": true,
+                "description": "The location at which a particular trade related organization or person may be found or reached.",
+                "version": "",
+                "status": "",
+                "Required": [],
+                "Property": [
+                    {
+                        "name": "CityName",
+                        "description": "The name, expressed as text, of the city, town or village of this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004544",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "CityName"
+                        }
+                    },
+                    {
+                        "name": "Country",
+                        "description": "The unique identifier of a country for this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01004546",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Country"
+                        }
+                    },
+                    {
+                        "name": "CountryName",
+                        "description": "A name, expressed as text, of the country for this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004547",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "CountryName"
+                        }
+                    },
+                    {
+                        "name": "CountrySubDivisionName",
+                        "description": "A name, expressed as text, of the sub-division of a country for this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004549",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "CountrySubDivisionName"
+                        }
+                    },
+                    {
+                        "name": "Identification",
+                        "description": "A unique identifier for this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..*",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000011\nUN01004534",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Identifier",
+                            "name": "Identification"
+                        }
+                    },
+                    {
+                        "name": "Postcode",
+                        "description": "A code specifying the postcode of this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT000007\nUN01004535",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Code",
+                            "name": "Postcode"
+                        }
+                    },
+                    {
+                        "name": "StreetName",
+                        "description": "A name, expressed as text, of a street or thoroughfare for this trade address.",
+                        "isID": false,
+                        "status": "",
+                        "cardinality": "0..1",
+                        "tags": [
+                            {
+                                "name": "UID",
+                                "value": "UDT0000019\nUN01004543",
+                                "kind": "hidden"
+                            }
+                        ],
+                        "defaultValue": "",
+                        "DataType": {
+                            "type": "Text",
+                            "name": "StreetName"
+                        }
+                    }
+                ],
+                "Relationship": []
+            }
+        }
+    ]
+}
